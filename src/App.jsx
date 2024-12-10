@@ -1,5 +1,6 @@
 import { CoreConcept } from "./Components/CoreConcept/CoreConcept"
 import { Header } from "./Components/Header/Header"
+import { Examples } from "./Components/Examples/Examples"
 import { CORE_CONCEPTS } from "./data"
 import './App.css'
 
@@ -12,10 +13,11 @@ function App() {
           <h2 className="section-title">Core Concepts</h2>
           <ul className="core-concepts__list">
             {CORE_CONCEPTS.map(item => (
-              <CoreConcept key={item.title} image={item.image} title={item.title} description={item.description}/>
+              <CoreConcept key={item.title} {...item}/>
             ))}
           </ul>
         </section>
+        <Examples />
       </main>
     </div>
   )
